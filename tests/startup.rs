@@ -14,12 +14,12 @@ use std::sync::mpsc::channel;
 use std::thread;
 
 use iron::{status, Iron, Listening};
-use matrix_rocketchat::Server;
 use matrix_rocketchat::errors::*;
+use matrix_rocketchat::Server;
 use matrix_rocketchat_test::{default_matrix_api_versions, handlers, DEFAULT_LOGGER, IRON_THREADS, TEMP_DIR_NAME};
 use router::Router;
-use ruma_client_api::Endpoint;
 use ruma_client_api::r0::account::register::Endpoint as RegisterEndpoint;
+use ruma_client_api::Endpoint;
 use tempdir::TempDir;
 
 #[test]

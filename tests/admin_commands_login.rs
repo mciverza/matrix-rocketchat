@@ -72,7 +72,8 @@ fn wrong_password_when_logging_in_via_chat_message() {
         },
         "login",
     );
-    let test = test.with_matrix_routes(matrix_router)
+    let test = test
+        .with_matrix_routes(matrix_router)
         .with_custom_rocketchat_routes(rocketchat_router)
         .with_rocketchat_mock()
         .with_connected_admin_room()
@@ -334,7 +335,8 @@ fn server_does_not_respond_when_logging_in_via_chat_mesage() {
         },
         "login",
     );
-    let test = test.with_matrix_routes(matrix_router)
+    let test = test
+        .with_matrix_routes(matrix_router)
         .with_custom_rocketchat_routes(rocketchat_router)
         .with_rocketchat_mock()
         .with_connected_admin_room()
@@ -370,7 +372,8 @@ fn the_user_gets_a_message_when_the_login_response_cannot_be_deserialized() {
         },
         "login",
     );
-    let test = test.with_matrix_routes(matrix_router)
+    let test = test
+        .with_matrix_routes(matrix_router)
         .with_custom_rocketchat_routes(rocketchat_router)
         .with_rocketchat_mock()
         .with_connected_admin_room()
@@ -408,7 +411,8 @@ fn the_user_gets_a_message_when_the_login_returns_an_error() {
         },
         "login",
     );
-    let test = test.with_matrix_routes(matrix_router)
+    let test = test
+        .with_matrix_routes(matrix_router)
         .with_rocketchat_mock()
         .with_custom_rocketchat_routes(rocketchat_router)
         .with_connected_admin_room()

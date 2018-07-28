@@ -13,11 +13,11 @@ use matrix_rocketchat::api::{RequestData, RestApi};
 use matrix_rocketchat::models::Events;
 use matrix_rocketchat_test::{default_timeout, helpers, MessageForwarder, Test, HS_TOKEN};
 use reqwest::{Method, StatusCode};
-use ruma_client_api::Endpoint;
 use ruma_client_api::r0::send::send_message_event::Endpoint as SendMessageEventEndpoint;
-use ruma_events::EventType;
+use ruma_client_api::Endpoint;
 use ruma_events::call::hangup::{HangupEvent, HangupEventContent};
 use ruma_events::collections::all::Event;
+use ruma_events::EventType;
 use ruma_identifiers::{EventId, RoomId, UserId};
 use serde_json::to_string;
 

@@ -32,7 +32,8 @@ fn the_user_gets_a_message_when_the_rocketchat_error_cannot_be_deserialized() {
         },
         "login",
     );
-    let test = test.with_matrix_routes(matrix_router)
+    let test = test
+        .with_matrix_routes(matrix_router)
         .with_rocketchat_mock()
         .with_custom_rocketchat_routes(rocketchat_router)
         .with_connected_admin_room()

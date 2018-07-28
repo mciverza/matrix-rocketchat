@@ -12,9 +12,9 @@ use std::convert::TryFrom;
 
 use matrix_rocketchat::api::MatrixApi;
 use matrix_rocketchat_test::{default_timeout, handlers, helpers, MessageForwarder, Test, DEFAULT_LOGGER, RS_TOKEN};
-use ruma_client_api::Endpoint;
 use ruma_client_api::r0::send::send_message_event::Endpoint as SendMessageEventEndpoint;
 use ruma_client_api::r0::sync::get_state_events_for_empty_key::{self, Endpoint as GetStateEventsForEmptyKey};
+use ruma_client_api::Endpoint;
 use ruma_events::EventType;
 use ruma_identifiers::{RoomId, UserId};
 

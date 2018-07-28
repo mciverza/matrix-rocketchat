@@ -1,14 +1,14 @@
 use std::collections::HashMap;
 use std::io::Read;
 
-use url;
-use reqwest::{Body, Client, Method, Response, StatusCode, Url};
 use reqwest::header::Headers;
 use reqwest::multipart::Form;
+use reqwest::{Body, Client, Method, Response, StatusCode, Url};
 use ruma_client_api::Method as RumaHttpMethod;
+use url;
 
-use errors::*;
 use api::rocketchat::Endpoint;
+use errors::*;
 
 /// Request data types.
 pub enum RequestData<T: Into<Body>> {
@@ -65,7 +65,13 @@ impl RestApi {
 
     /// Get a file that was uploaded to Rocket.Chat
     pub fn get_rocketchat_file<T: Into<Body>>(endpoint: &Endpoint<T>) -> Result<Response> {
-        RestApi::call_raw(&endpoint.method(), &endpoint.url(), endpoint.payload()?, &endpoint.query_params(), endpoint.headers())
+        RestApi::call_raw(
+            &endpoint.method(),
+            &endpoint.url(),
+            endpoint.payload()?,
+            &endpoint.query_params(),
+            endpoint.headers(),
+        )
     }
 
     /// Call a REST API endpoint

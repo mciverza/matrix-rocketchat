@@ -38,7 +38,8 @@ fn successfully_forwards_a_direct_message_to_rocketchat() {
     let (rocketchat_message_forwarder, rocketchat_receiver) = MessageForwarder::new();
     rocketchat_router.post(CHAT_POST_MESSAGE_PATH, rocketchat_message_forwarder, "post_text_message");
 
-    let test = test.with_matrix_routes(matrix_router)
+    let test = test
+        .with_matrix_routes(matrix_router)
         .with_rocketchat_mock()
         .with_custom_rocketchat_routes(rocketchat_router)
         .with_connected_admin_room()
@@ -103,7 +104,8 @@ fn direct_messages_are_not_forwarded_if_no_matching_matrix_user_is_found() {
     let (rocketchat_message_forwarder, rocketchat_receiver) = MessageForwarder::new();
     rocketchat_router.post(CHAT_POST_MESSAGE_PATH, rocketchat_message_forwarder, "post_text_message");
 
-    let test = test.with_matrix_routes(matrix_router)
+    let test = test
+        .with_matrix_routes(matrix_router)
         .with_rocketchat_mock()
         .with_custom_rocketchat_routes(rocketchat_router)
         .with_connected_admin_room()
@@ -163,7 +165,8 @@ fn direct_messages_are_not_forwarded_if_no_matching_virtual_user_is_found() {
     let (rocketchat_message_forwarder, rocketchat_receiver) = MessageForwarder::new();
     rocketchat_router.post(CHAT_POST_MESSAGE_PATH, rocketchat_message_forwarder, "post_text_message");
 
-    let test = test.with_matrix_routes(matrix_router)
+    let test = test
+        .with_matrix_routes(matrix_router)
         .with_rocketchat_mock()
         .with_custom_rocketchat_routes(rocketchat_router)
         .with_connected_admin_room()
